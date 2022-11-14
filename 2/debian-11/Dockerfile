@@ -12,6 +12,7 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "git" "2.37.1-1" 
 RUN apt-get update && apt-get upgrade -y && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives
 RUN /build/bitnami-user.sh
+RUN chmod 400 /root/.ssh/id_rsa
 
 COPY rootfs /
 ENV APP_VERSION="2.37.1" \
